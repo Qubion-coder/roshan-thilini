@@ -5,14 +5,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Send, Heart, Mail, User, Users, Coffee, Sparkles } from 'lucide-react';
 import { submitToGoogleSheets } from '@/lib/googleSheets';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useEffect } from 'react';
 
-export default function RSVPSection() {
+function RSVPContent() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
+  const searchParams = useSearchParams();
+
   const [formData, setFormData] = useState({
     name: '',
     guests: '1',
-    dietary: '',
   });
+
+  useEffect(() => {
+    const name = searchParams.get('name');
+    const prefix = searchParams.get('prefix');
+    if (name) {
+      setFormData(prev => ({
+        ...prev,
+        name: prefix ? `${prefix} ${name}` : name
+      }));
+    }
+  }, [searchParams]);
   const [submitted, setSubmitted] = useState(false);
   const [isHoveringSubmit, setIsHoveringSubmit] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,13 +50,12 @@ export default function RSVPSection() {
         formType: 'rsvp',
         name: formData.name,
         guests: formData.guests,
-        dietary: formData.dietary,
       });
 
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', guests: '1', dietary: '' });
+        setFormData({ name: '', guests: '1' });
       }, 4000);
     } catch (error) {
       setSubmitError('Unable to submit right now. Please try again.');
@@ -181,7 +194,7 @@ export default function RSVPSection() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                     {/* Guests Select */}
                     <div className="group relative">
                       <label className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#c07a54]">
@@ -205,21 +218,6 @@ export default function RSVPSection() {
                           </svg>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Dietary Input */}
-                    <div className="group relative">
-                      <label className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#c07a54]">
-                        <Coffee className="h-4 w-4" /> Dietary Notes
-                      </label>
-                      <input
-                        type="text"
-                        name="dietary"
-                        value={formData.dietary}
-                        onChange={handleChange}
-                        placeholder="Allergies, Vegan, etc."
-                        className="w-full rounded-2xl border border-[#efdcc9] bg-white/65 px-5 py-4 text-[#4a3b3c] placeholder-[#d5ab90]/70 outline-none transition-all duration-300 focus:border-[#c07a54] focus:bg-white focus:shadow-[0_10px_20px_rgba(192,122,84,0.12)] group-hover:bg-white/90"
-                      />
                     </div>
                   </div>
 
@@ -296,5 +294,13 @@ export default function RSVPSection() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+export default function RSVPSection() {
+  return (
+    <Suspense fallback={<section className="min-h-[500px]" />}>
+      <RSVPContent />
+    </Suspense>
   );
 }

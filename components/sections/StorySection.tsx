@@ -3,9 +3,15 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Sparkles, Heart } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function StorySection() {
+function StoryContent() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const searchParams = useSearchParams();
+  
+  const prefix = searchParams.get('prefix') || 'Mr. & Mrs.';
+  const name = searchParams.get('name') || 'Sanjaya';
 
   return (
     <section
@@ -47,7 +53,7 @@ export default function StorySection() {
           </h2>
           
           <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8 font-medium">
-            Mr. & Mrs. Sanjaya,
+            {prefix} {name},
             <br /><br />
             With joyful hearts, we request the honor of your presence to celebrate our wedding and the beginning of our new life together.
           </p>
@@ -60,5 +66,17 @@ export default function StorySection() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+export default function StorySection() {
+  return (
+    <Suspense fallback={
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 md:py-32 overflow-hidden bg-[#faf7f2] flex items-center justify-center min-h-[500px]">
+        {/* Placeholder while loading */}
+      </section>
+    }>
+      <StoryContent />
+    </Suspense>
   );
 }

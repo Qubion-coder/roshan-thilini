@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Heart, PenLine, Send, Stars, UserRound, Sparkles, Quote } from 'lucide-react';
 import { submitToGoogleSheets } from '@/lib/googleSheets';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useEffect } from 'react';
 
 interface Blessing {
   id: string;
@@ -15,12 +17,22 @@ interface Blessing {
 
 const initialBlessings: Blessing[] = [];
 
-export default function BlessingsSection() {
+function BlessingsContent() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
+  const searchParams = useSearchParams();
 
   const [blessings, setBlessings] = useState<Blessing[]>(initialBlessings);
   const [newBlessing, setNewBlessing] = useState('');
   const [visitorName, setVisitorName] = useState('');
+
+  useEffect(() => {
+    const name = searchParams.get('name');
+    const prefix = searchParams.get('prefix');
+    if (name) {
+      setVisitorName(prefix ? `${prefix} ${name}` : name);
+    }
+  }, [searchParams]);
+
   const [submitted, setSubmitted] = useState(false);
   const [isHoveringSend, setIsHoveringSend] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -326,5 +338,13 @@ export default function BlessingsSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+export default function BlessingsSection() {
+  return (
+    <Suspense fallback={<section className="min-h-[500px]" />}>
+      <BlessingsContent />
+    </Suspense>
   );
 }
