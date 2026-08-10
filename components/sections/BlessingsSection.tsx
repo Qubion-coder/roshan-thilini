@@ -13,22 +13,7 @@ interface Blessing {
   timestamp: string;
 }
 
-const initialBlessings: Blessing[] = [
-  {
-    id: '1',
-    name: 'Priya Sharma',
-    message:
-      'Wishing you both a lifetime of happiness, grace, and countless beautiful moments together. So excited for the big day!',
-    timestamp: '2 days ago',
-  },
-  {
-    id: '2',
-    name: 'Rajesh Kumar',
-    message:
-      'May your love continue to grow stronger with each passing day. You two are absolutely perfect for each other!',
-    timestamp: '5 days ago',
-  },
-];
+const initialBlessings: Blessing[] = [];
 
 export default function BlessingsSection() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
@@ -192,7 +177,7 @@ export default function BlessingsSection() {
           </h2>
 
           <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-[#7b6258]">
-            Share your prayers and heartfelt blessings for our new life together in Christ.
+            Share your heartfelt wishes and blessings for our new life together.
           </p>
         </motion.div>
 

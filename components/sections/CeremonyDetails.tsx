@@ -13,23 +13,13 @@ export default function CeremonyDetails() {
 
   const detailGroups = [
     {
-      key: 'church',
-      title: 'Church',
-      timeLabel: 'Church Time',
-      timeValue: '9:30 AM',
-      timeSub: 'Holy wedding ceremony',
-      venueLabel: 'Church Venue',
-      venueValue: "St. Joseph's Church - Gonawila",
-      venueSub: 'Live location available',
-    },
-    {
-      key: 'function',
-      title: 'Function',
-      timeLabel: 'Function Time',
-      timeValue: '11:30 AM',
-      timeSub: 'Reception and celebration',
-      venueLabel: 'Function Venue',
-      venueValue: 'Sampath Banquet Hall',
+      key: 'wedding',
+      title: 'Wedding',
+      timeLabel: 'Ceremony Time',
+      timeValue: '10:00 AM',
+      timeSub: 'Wedding ceremony',
+      venueLabel: 'Venue',
+      venueValue: 'Lavenro Garden Hotel - Kosgama',
       venueSub: 'Live location available',
     },
   ];
@@ -71,8 +61,8 @@ export default function CeremonyDetails() {
               <div className="absolute -inset-3 rounded-t-[210px] rounded-b-[35px] border border-[#C9A227]/40 hidden md:block" />
 
               <Image
-                src="/images/IMG_2529.JPG.jpeg"
-                alt="Vimukthi and Piumi"
+                src="/ceremony-img.png"
+                alt="Ashini and Kushan"
                 fill
                 className="object-cover"
                 priority
@@ -84,29 +74,26 @@ export default function CeremonyDetails() {
               <div className="absolute inset-0 opacity-[0.14]"
                 style={{ backgroundImage: 'linear-gradient(rgba(201,162,39,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,39,0.55) 1px, transparent 1px)', backgroundSize: '38px 38px' }} />
 
-              <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center text-[#f5e6c8]">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#f0d18b]/40 bg-black/25 px-4 py-1.5 backdrop-blur-sm">
-                  <Cross className="h-3.5 w-3.5 text-[#f4ddab]" />
-                  <p className="text-[10px] uppercase tracking-[0.32em] text-[#f6dd9a] drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">Blessed Union</p>
-                </div>
+              <div className="relative z-10 flex h-full flex-col items-center justify-end pb-8 md:justify-center md:pb-0 px-8 text-center text-[#f5e6c8]">
+
                 <h3 className="mt-5 font-serif text-4xl text-[#fff7de] drop-shadow-[0_4px_16px_rgba(0,0,0,0.75)]">
-                  VIMUKTHI <span className="text-[#f0d18b]">&amp;</span> PIUMI
+                  ASHINI <span className="text-[#f0d18b]">&amp;</span> KUSHAN
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-[#f5e6c8]/80">
-                  "Love is patient, love is kind." Join us as we exchange vows in faith, gratitude, and joy.
+                  "Two hearts, one journey." Join us as we exchange vows in love, gratitude, and joy.
                 </p>
                 <div className="mt-8 h-px w-28 bg-[#C9A227]/50" />
-                <p className="mt-5 text-xs uppercase tracking-[0.28em] text-[#C9A227]">May 30, 2026</p>
+                <p className="mt-5 text-xs uppercase tracking-[0.28em] text-[#C9A227]">September 16, 2026</p>
               </div>
 
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -right-2 sm:-right-6 md:-right-10 top-20 md:top-40 flex h-24 w-24 md:h-28 md:w-28 items-center justify-center rounded-full border border-[#C9A227]/40 bg-[#2c0710]/80 shadow-[0_0_30px_rgba(201,162,39,0.3)] backdrop-blur-md"
+                className="absolute -right-2 sm:-right-6 md:-right-10 top-20 md:top-40 flex h-16 w-16 sm:h-24 sm:w-24 md:h-28 md:w-28 items-center justify-center rounded-full border border-[#C9A227]/40 bg-[#2c0710]/80 shadow-[0_0_30px_rgba(201,162,39,0.3)] backdrop-blur-md"
               >
                 <div className="text-center">
-                  <Heart className="mx-auto h-6 w-6 md:h-8 md:w-8 text-[#C9A227] fill-[#C9A227]/20" />
-                  <span className="mt-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-[#f5e6c8]">Forever</span>
+                  <Heart className="mx-auto h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 text-[#C9A227] fill-[#C9A227]/20" />
+                  <span className="mt-1 sm:mt-2 block text-[7px] sm:text-[10px] font-medium uppercase tracking-[0.25em] text-[#f5e6c8]">Forever</span>
                 </div>
               </motion.div>
 
@@ -134,7 +121,7 @@ export default function CeremonyDetails() {
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#C9A227]/30 bg-[#1a0408]/50 px-5 py-2 backdrop-blur-sm">
               <Sparkles className="h-4 w-4 text-[#C9A227]" />
               <span className="text-xs uppercase tracking-[0.3em] text-[#C9A227] font-medium">
-                The Sacred Celebration
+                The Wedding Celebration
               </span>
             </div>
 
@@ -144,7 +131,7 @@ export default function CeremonyDetails() {
             </h2>
 
             <p className="mb-12 text-lg leading-relaxed text-[#f5e6c8]/70 max-w-lg">
-              With immense joy in our hearts, we invite you to share our happiness as we exchange our vows before God. Join us for a sacred Christian celebration of faith, love, and lifelong commitment.
+              With immense joy in our hearts, we invite you to share our happiness as we exchange our vows. Join us for a beautiful celebration of love, joy, and lifelong commitment.
             </p>
 
             <div className="flex flex-col gap-5">
@@ -194,24 +181,7 @@ export default function CeremonyDetails() {
               })}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.9 }}
-              className="mt-12 overflow-hidden rounded-2xl border border-[#C9A227]/20 bg-[linear-gradient(135deg,rgba(74,15,24,0.4),rgba(26,4,8,0.8))] p-6 shadow-2xl backdrop-blur-lg relative"
-            >
-              <div className="absolute right-0 top-0 opacity-10">
-                <Crown className="w-32 h-32 -mt-8 -mr-8 text-[#C9A227]" />
-              </div>
 
-              <h4 className="text-xs uppercase tracking-widest text-[#C9A227] mb-3 font-semibold flex items-center gap-2">
-                <span className="w-6 h-[1px] bg-[#C9A227]"></span> Guest Notes
-              </h4>
-              <div className="space-y-2">
-                <p className="text-[#f5e6c8]/80 text-sm md:text-base"><span className="text-[#C9A227]">Dress Code:</span> Church Formal / Elegant Attire</p>
-                <p className="text-[#f5e6c8]/80 text-sm md:text-base"><span className="text-[#C9A227]">Reception:</span> Function starts at 11:30 AM at Sampath Banquet Hall</p>
-              </div>
-            </motion.div>
 
           </motion.div>
 

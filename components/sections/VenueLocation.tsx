@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, MapPin, Navigation, Sparkles } from 'lucide-react';
 
-const LIVE_LOCATION_URL = 'https://maps.app.goo.gl/pikUWZebfsNYjp4i6?g_st=iw';
+const LIVE_LOCATION_URL = 'https://maps.app.goo.gl/KjLNWBH2FWHsfx159';
 const FUNCTION_LOCATION_URL = 'https://maps.app.goo.gl/hPEbCMaPZywmpFQi7';
 
 export default function VenueLocation() {
@@ -50,7 +50,7 @@ export default function VenueLocation() {
           >
             <Sparkles className="h-4 w-4 text-[#c0784e]" />
             <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#c0784e] sm:text-sm">
-              Church & Function Venues
+              Wedding Venue
             </span>
           </motion.div>
 
@@ -126,7 +126,7 @@ export default function VenueLocation() {
               >
                 <div>
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#be7f56]">Live Location</p>
-                  <h4 className="mt-1 font-serif text-lg text-[#4d3732] sm:text-2xl">St. Joseph's Church - Gonawila</h4>
+                  <h4 className="mt-1 font-serif text-lg text-[#4d3732] sm:text-2xl">Lavenro Garden Hotel - Kosgama</h4>
                 </div>
                 <motion.div whileHover={{ scale: 1.08 }} className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ca7c57] text-white shadow-md">
                   <Navigation className="h-5 w-5" />
@@ -148,11 +148,11 @@ export default function VenueLocation() {
               </div>
 
               <h3 className="font-serif text-3xl leading-tight text-[#4d3732] md:text-4xl">
-                St. Joseph's<br />Church - Gonawila
+                Lavenro Garden Hotel<br />Kosgama
               </h3>
 
               <p className="mt-5 text-sm leading-relaxed text-[#7a6258] md:text-base">
-                We warmly invite you to join us at St. Joseph's Church - Gonawila for our holy wedding ceremony.
+                We warmly invite you to join us at Lavenro Garden Hotel - Kosgama for our wedding ceremony.
               </p>
 
               <a
@@ -168,24 +168,8 @@ export default function VenueLocation() {
               <div className="mt-6 rounded-2xl border border-[#ead2b9]/60 bg-white/75 p-4">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#b78058]">Map Link</p>
                 <p className="mt-2 break-all text-xs text-[#7a6258]">
-                  maps.app.goo.gl/pikUWZebfsNYjp4i6
+                  maps.app.goo.gl/KjLNWBH2FWHsfx159
                 </p>
-              </div>
-
-              <div className="mt-5 rounded-2xl border border-[#ead2b9]/60 bg-white/75 p-4">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#b78058]">Function Venue</p>
-                <h4 className="mt-2 font-serif text-xl text-[#4d3732]">Sampath Banquet Hall</h4>
-                <p className="mt-2 text-xs text-[#7a6258]">Function starts at 11:30 AM</p>
-                <a
-                  href={FUNCTION_LOCATION_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#b96f4d] px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_10px_24px_rgba(185,111,77,0.3)] transition-transform hover:scale-[1.02]"
-                >
-                  Open Hotel Location
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-                <p className="mt-3 break-all text-xs text-[#7a6258]">maps.app.goo.gl/hPEbCMaPZywmpFQi7</p>
               </div>
             </div>
           </motion.div>

@@ -18,7 +18,7 @@ export default function CountdownSection() {
     triggerOnce: true,
   });
 
-  const targetDate = useMemo(() => new Date('2026-05-30T10:30:00').getTime(), []);
+  const targetDate = useMemo(() => new Date('2026-09-16T10:00:00').getTime(), []);
 
   const getTimeLeft = (): TimeLeft => {
     const now = new Date().getTime();
@@ -160,7 +160,7 @@ export default function CountdownSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#7a5f57] sm:text-lg">
-            Every second brings us closer to our blessed wedding day. We cannot wait to celebrate this grace-filled moment with you.
+            Every second brings us closer to our special day. We cannot wait to celebrate this joyful moment with you.
           </p>
         </motion.div>
 
