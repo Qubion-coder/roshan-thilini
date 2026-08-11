@@ -6,16 +6,16 @@
 /* Premium Sri Lankan Kandyan Wedding Theme */
 :root {
   /* Primary Colors - Royal Maroon & Gold */
-  --maroon-dark: #7A1E1E;
-  --maroon-light: #A82C2C;
-  --gold-primary: #C9A227;
-  --gold-accent: #D4AF37;
-  --ivory: #F5E6C8;
-  --cream: #FAF6F0;
+  --maroon-dark: #890f0f;
+  --maroon-light: #bf1515;
+  --gold-primary: #cca224;
+  --gold-accent: #dbb030;
+  --ivory: #f5eac8;
+  --cream: #fcf8ee;
   --white: #FFFFFF;
   --text-dark: #1A1A1A;
   --text-muted: #6B6B6B;
-  --border-light: #E8DCC8;
+  --border-light: #f3e6bd;
   
   /* Design System */
   --background: var(--cream);
@@ -32,7 +32,7 @@
   --muted-foreground: var(--ivory);
   --accent: var(--maroon-light);
   --accent-foreground: var(--white);
-  --destructive: #DC2626;
+  --destructive: #e61c1c;
   --destructive-foreground: var(--white);
   --border: var(--border-light);
   --input: var(--white);

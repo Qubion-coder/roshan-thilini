@@ -57,7 +57,7 @@ With love,
             <select
               value={prefix}
               onChange={(e) => setPrefix(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff4d6d] focus:border-transparent outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ed5f5f] focus:border-transparent outline-none"
             >
               {prefixes.map((p) => (
                 <option key={p} value={p}>{p}</option>
@@ -73,13 +73,13 @@ With love,
               value={guestName}
               onChange={(e) => setGuestName(e.target.value)}
               placeholder="e.g. Sanjaya"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff4d6d] focus:border-transparent outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ed5f5f] focus:border-transparent outline-none"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-[#ff4d6d] hover:bg-[#ff4d6d]/90 text-white font-medium py-3 rounded-lg transition-colors"
+            className="w-full bg-[#ed5f5f] hover:bg-[#ed5f5f]/90 text-white font-medium py-3 rounded-lg transition-colors"
           >
             Generate Link
           </button>

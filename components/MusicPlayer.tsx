@@ -81,7 +81,7 @@ export default function MusicPlayer() {
                         initial={{ opacity: 0, x: 20, scale: 0.8 }}
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: 20, scale: 0.8 }}
-                        className="bg-white/90 backdrop-blur-md border border-[#D4AF37]/30 rounded-full px-4 py-2 shadow-xl flex items-center gap-2 mb-2"
+                        className="bg-white/90 backdrop-blur-md border border-[#dbb030]/30 rounded-full px-4 py-2 shadow-xl flex items-center gap-2 mb-2"
                         style={{ borderColor: 'rgba(212, 175, 55, 0.3)' }}
                     >
                         <motion.span
@@ -91,7 +91,7 @@ export default function MusicPlayer() {
                         >
                             🎵
                         </motion.span>
-                        <span className="text-[11px] font-medium text-[#8B735B] uppercase tracking-wider">
+                        <span className="text-[11px] font-medium text-[#c39b22] uppercase tracking-wider">
                             Tap for Wedding Music
                         </span>
                     </motion.div>
@@ -105,7 +105,7 @@ export default function MusicPlayer() {
                 whileTap={{ scale: 0.9 }}
                 className="pointer-events-auto relative w-14 h-14 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(212,175,55,0.4)] border-2 border-white group"
                 style={{
-                    background: 'linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)',
+                    background: 'linear-gradient(135deg, #dbb030 0%, #a6841d 100%)',
                 }}
                 aria-label={isPlaying ? 'Pause music' : 'Play music'}
             >
@@ -113,13 +113,13 @@ export default function MusicPlayer() {
                 {isPlaying && (
                     <>
                         <motion.div
-                            className="absolute inset-0 rounded-full border border-[#D4AF37]/40"
+                            className="absolute inset-0 rounded-full border border-[#dbb030]/40"
                             animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
                             style={{ borderColor: 'rgba(212, 175, 55, 0.4)' }}
                         />
                         <motion.div
-                            className="absolute inset-0 rounded-full border border-[#D4AF37]/40"
+                            className="absolute inset-0 rounded-full border border-[#dbb030]/40"
                             animate={{ scale: [1, 1.4], opacity: [0.5, 0] }}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
                             style={{ borderColor: 'rgba(212, 175, 55, 0.4)' }}

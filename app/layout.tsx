@@ -16,8 +16,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Ashini & Kushan | Wedding Celebration',
-  description: 'Join us as we celebrate the wedding of Ashini and Kushan on September 16, 2026.',
+  title: 'Roshan & Thilini | Wedding Celebration',
+  description: 'Join us as we celebrate the wedding of Roshan and Thilini on September 5, 2026.',
   generator: 'InviteMint',
   icons: {
     icon: '/wedding-icon.png',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#D4AF37',
+  themeColor: '#dbb030',
   width: 'device-width',
   initialScale: 1,
   userScalable: true,

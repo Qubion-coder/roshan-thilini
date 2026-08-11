@@ -159,7 +159,7 @@ export default function EnvelopeOpener({ onOpen }: EnvelopeOpenerProps) {
               whileTap={{ scale: 0.96 }}
               className="px-10 py-3 rounded-full font-serif text-base sm:text-lg tracking-widest uppercase text-white"
               style={{
-                background: 'linear-gradient(135deg, #D4AF37 0%, #c9a227 100%)',
+                background: 'linear-gradient(135deg, #dbb030 0%, #cca224 100%)',
                 boxShadow: '0 8px 30px rgba(212,175,55,0.4)',
               }}
             >

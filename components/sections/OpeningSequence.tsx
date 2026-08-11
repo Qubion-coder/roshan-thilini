@@ -58,7 +58,7 @@ export default function OpeningSequence({ onComplete }: OpeningSequenceProps) {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-primary to-[#5A1515] flex items-center justify-center">
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-primary to-[#640b0b] flex items-center justify-center">
       {/* Decorative background patterns */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 border-2 border-secondary rounded-full" />
@@ -114,8 +114,8 @@ export default function OpeningSequence({ onComplete }: OpeningSequenceProps) {
 
                 <defs>
                   <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%">
-                    <stop offset="0%" stopColor="#C9A227" />
-                    <stop offset="100%" stopColor="#D4AF37" />
+                    <stop offset="0%" stopColor="#cca224" />
+                    <stop offset="100%" stopColor="#dbb030" />
                   </linearGradient>
                 </defs>
               </svg>
