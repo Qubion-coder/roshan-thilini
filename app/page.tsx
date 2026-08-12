@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { EnvelopeOpener } from '@/components/envelope-opener';
 import HeroSection from '@/components/sections/HeroSection';
 import StorySection from '@/components/sections/StorySection';
@@ -24,27 +24,29 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-x-hidden bg-background">
-      {/* Persistent floating music player */}
-      <MusicPlayer />
+    <Suspense fallback={<div className="min-h-screen bg-[#fcf9f0] flex items-center justify-center">Loading...</div>}>
+      <div className="relative w-full overflow-x-hidden bg-background">
+        {/* Persistent floating music player */}
+        <MusicPlayer />
 
-      {!isOpened ? (
-        <EnvelopeOpener onEnvelopeOpen={() => setIsOpened(true)} />
-      ) : (
-        <>
-          <HeroSection />
-          <StorySection />
-          <CoupleImageSection />
-          <ParentsSection />
-          <CeremonyDetails />
-          <CountdownSection />
+        {!isOpened ? (
+          <EnvelopeOpener onEnvelopeOpen={() => setIsOpened(true)} />
+        ) : (
+          <>
+            <HeroSection />
+            <StorySection />
+            <CoupleImageSection />
+            <ParentsSection />
+            <CeremonyDetails />
+            <CountdownSection />
 
-          <VenueLocation />
-          <RSVPSection />
-          <BlessingsSection />
-          <FooterSection />
-        </>
-      )}
-    </div>
+            <VenueLocation />
+            <RSVPSection />
+            <BlessingsSection />
+            <FooterSection />
+          </>
+        )}
+      </div>
+    </Suspense>
   );
 }

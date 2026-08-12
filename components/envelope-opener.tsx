@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 
 interface EnvelopeOpenerProps {
   onEnvelopeOpen: () => void;
@@ -11,6 +12,10 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const searchParams = useSearchParams();
+  const prefix = searchParams.get('prefix') || 'Mr. & Mrs.';
+  const name = searchParams.get('name') || 'Sanjaya';
 
   const handleEnvelopeClick = () => {
     if (isAnimating || isOpen) return;
@@ -24,22 +29,29 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
     }, 2600);
   };
 
-  const petals = Array.from({ length: 16 }).map((_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    delay: Math.random() * 2.5,
-    duration: 10 + Math.random() * 8,
-    scale: 0.5 + Math.random() * 0.9,
-    drift: Math.random() * 120 - 60,
-  }));
+  const [petals, setPetals] = useState<any[]>([]);
+  const [sparkles, setSparkles] = useState<any[]>([]);
 
-  const sparkles = Array.from({ length: 18 }).map((_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    delay: Math.random() * 3,
-    duration: 3 + Math.random() * 3,
-  }));
+  useEffect(() => {
+    setMounted(true);
+    setPetals(Array.from({ length: 16 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      delay: Math.random() * 2.5,
+      duration: 10 + Math.random() * 8,
+      scale: 0.5 + Math.random() * 0.9,
+      drift: Math.random() * 120 - 60,
+    })));
+
+    setSparkles(Array.from({ length: 18 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: Math.random() * 3,
+      duration: 3 + Math.random() * 3,
+      scale: 0.2 + Math.random() * 0.8,
+    })));
+  }, []);
 
   return (
     <AnimatePresence mode="wait">
@@ -121,7 +133,7 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
 
           {/* Floating sparkles */}
           <div className="absolute inset-0 pointer-events-none">
-            {sparkles.map((item) => (
+            {mounted && sparkles.map((item) => (
               <motion.span
                 key={item.id}
                 className="absolute h-1 w-1 rounded-full bg-[#f1e0ad]"
@@ -142,7 +154,7 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
 
           {/* Floating lotus petals */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {petals.map((petal) => (
+            {mounted && petals.map((petal) => (
               <motion.div
                 key={petal.id}
                 className="absolute top-[-10%]"
@@ -422,7 +434,8 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                       </h2>
 
                       <p className="mx-auto mt-5 max-w-[240px] text-sm leading-7 text-[#8c6f19]">
-                        Invite you to witness a beautiful wedding ceremony filled with love, joy, and happiness.
+                        {prefix} {name},<br />
+                        We cordially invite you to witness a beautiful wedding ceremony filled with love, joy, and happiness.
                       </p>
 
                       <div className="mt-6 flex items-center justify-center gap-3">

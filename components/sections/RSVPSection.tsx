@@ -15,6 +15,7 @@ function RSVPContent() {
   const [formData, setFormData] = useState({
     name: '',
     guests: '1',
+    status: 'accepted',
   });
 
   useEffect(() => {
@@ -50,12 +51,13 @@ function RSVPContent() {
         formType: 'rsvp',
         name: formData.name,
         guests: formData.guests,
+        status: formData.status,
       });
 
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', guests: '1' });
+        setFormData({ name: '', guests: '1', status: 'accepted' });
       }, 4000);
     } catch (error) {
       setSubmitError('Unable to submit right now. Please try again.');
@@ -194,7 +196,7 @@ function RSVPContent() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Guests Select */}
                     <div className="group relative">
                       <label className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#dcb338]">
@@ -217,6 +219,29 @@ function RSVPContent() {
                             <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                           </svg>
                         </div>
+                      </div>
+                    </div>
+
+                    {/* Attendance Toggle */}
+                    <div className="group relative">
+                      <label className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#dcb338]">
+                        <Heart className="h-4 w-4" /> Attendance
+                      </label>
+                      <div className="flex gap-4">
+                        <button
+                          type="button"
+                          onClick={() => setFormData(prev => ({ ...prev, status: 'accepted' }))}
+                          className={`flex-1 rounded-2xl border px-5 py-4 text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 ${formData.status === 'accepted' ? 'border-[#dbb236] bg-[#dbb236] text-white shadow-[0_10px_20px_rgba(219,178,54,0.3)]' : 'border-[#f5e8c4] bg-white/65 text-[#780d0d] hover:bg-white/90'}`}
+                        >
+                          Accept
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setFormData(prev => ({ ...prev, status: 'declined' }))}
+                          className={`flex-1 rounded-2xl border px-5 py-4 text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 ${formData.status === 'declined' ? 'border-[#e83131] bg-[#e83131] text-white shadow-[0_10px_20px_rgba(232,49,49,0.3)]' : 'border-[#f5e8c4] bg-white/65 text-[#780d0d] hover:bg-white/90'}`}
+                        >
+                          Decline
+                        </button>
                       </div>
                     </div>
                   </div>

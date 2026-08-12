@@ -32,7 +32,7 @@ ${generatedLink}
 Your presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.
 
 With love,
-❤️ Ashini & Kushan`;
+❤️ Roshan & Thilini`;
 
   const copyLink = async () => {
     if (!generatedLink) return;
