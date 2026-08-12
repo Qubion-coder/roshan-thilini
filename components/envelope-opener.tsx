@@ -405,14 +405,6 @@ export function EnvelopeOpener({ onEnvelopeOpen }: EnvelopeOpenerProps) {
                         <p className="text-[9px] uppercase tracking-[0.28em] text-[#8a6d18]">
                           Together with their families
                         </p>
-                        <p className="text-[9px] leading-5 text-[#655012]">
-                          Bride, the loving daughter of<br />
-                          <span className="font-semibold">J.A. Chithra rohini</span> (Mother) and <span className="font-semibold">R.A. Thilak pushpakumara</span> (Father)
-                        </p>
-                        <p className="text-[9px] leading-5 text-[#655012]">
-                          Groom, the loving son of<br />
-                          <span className="font-semibold">J.K .Samanmali perera</span> (Mother) and <span className="font-semibold">W. Frensis fernando</span> (Father)
-                        </p>
                       </div>
 
                       <div className="mt-4 flex items-center justify-center gap-3">

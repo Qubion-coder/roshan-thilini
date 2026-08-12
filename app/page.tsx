@@ -5,6 +5,7 @@ import { EnvelopeOpener } from '@/components/envelope-opener';
 import HeroSection from '@/components/sections/HeroSection';
 import StorySection from '@/components/sections/StorySection';
 import CoupleImageSection from '@/components/sections/CoupleImageSection';
+import ParentsSection from '@/components/sections/ParentsSection';
 import CeremonyDetails from '@/components/sections/CeremonyDetails';
 import CountdownSection from '@/components/sections/CountdownSection';
 
@@ -34,6 +35,7 @@ export default function Home() {
           <HeroSection />
           <StorySection />
           <CoupleImageSection />
+          <ParentsSection />
           <CeremonyDetails />
           <CountdownSection />
 

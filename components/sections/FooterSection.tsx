@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Heart, MapPin, Sparkles } from 'lucide-react';
 
-const LIVE_LOCATION_URL = 'https://maps.app.goo.gl/CPsGzK2o96AkkDSW9';
+const LIVE_LOCATION_URL = 'https://maps.app.goo.gl/p7nChYMVBNn6jqfe9?g_st=iw';
 
 export default function FooterSection() {
   return (

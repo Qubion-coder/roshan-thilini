@@ -1,17 +1,20 @@
 import type { Metadata, Viewport } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import './enhancements.css'
 
-const playfairDisplay = Playfair_Display({
+const elegantFont = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-serif'
 })
 
-const inter = Inter({
+const elegantFontSans = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-sans'
 })
 
@@ -38,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${elegantFont.variable} ${elegantFontSans.variable}`}>
+      <body className="font-serif italic antialiased">
         {children}
         <Analytics />
       </body>
